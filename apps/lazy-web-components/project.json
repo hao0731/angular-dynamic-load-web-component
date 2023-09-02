@@ -20,7 +20,7 @@
           "apps/lazy-web-components/src/assets"
         ],
         "styles": ["apps/lazy-web-components/src/styles.scss"],
-        "scripts": []
+        "scripts": ["dist/libs/web-components/rainbow-block/rainbow-block.js"]
       },
       "configurations": {
         "production": {
