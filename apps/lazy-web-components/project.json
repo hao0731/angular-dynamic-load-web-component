@@ -17,10 +17,15 @@
         "tsConfig": "apps/lazy-web-components/tsconfig.app.json",
         "assets": [
           "apps/lazy-web-components/src/favicon.ico",
-          "apps/lazy-web-components/src/assets"
+          "apps/lazy-web-components/src/assets",
+          {
+            "input": "dist/libs/web-components/rainbow-block/",
+            "glob": "rainbow-block.js",
+            "output": "/assets/webComponents/"
+          }
         ],
         "styles": ["apps/lazy-web-components/src/styles.scss"],
-        "scripts": ["dist/libs/web-components/rainbow-block/rainbow-block.js"]
+        "scripts": []
       },
       "configurations": {
         "production": {

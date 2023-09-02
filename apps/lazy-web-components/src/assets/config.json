@@ -1,0 +1,8 @@
+{
+  "webComponents": [
+    {
+      "id": "rainbow-block",
+      "source": "assets/webComponents/rainbow-block.js"
+    }
+  ]
+}
