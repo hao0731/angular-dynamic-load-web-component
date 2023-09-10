@@ -1,9 +1,9 @@
 {
-  "name": "lazy-web-components",
+  "name": "dynamic-load-web-components",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "hao-lab",
-  "sourceRoot": "apps/lazy-web-components/src",
+  "sourceRoot": "apps/dynamic-load-web-components/src",
   "implicitDependencies": ["web-components-rainbow-block"],
   "tags": [],
   "targets": {
@@ -12,21 +12,21 @@
       "dependsOn": ["^package"],
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/lazy-web-components",
-        "index": "apps/lazy-web-components/src/index.html",
-        "main": "apps/lazy-web-components/src/main.ts",
+        "outputPath": "dist/apps/dynamic-load-web-components",
+        "index": "apps/dynamic-load-web-components/src/index.html",
+        "main": "apps/dynamic-load-web-components/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/lazy-web-components/tsconfig.app.json",
+        "tsConfig": "apps/dynamic-load-web-components/tsconfig.app.json",
         "assets": [
-          "apps/lazy-web-components/src/favicon.ico",
-          "apps/lazy-web-components/src/assets",
+          "apps/dynamic-load-web-components/src/favicon.ico",
+          "apps/dynamic-load-web-components/src/assets",
           {
             "input": "dist/libs/web-components/rainbow-block/",
             "glob": "rainbow-block.js",
             "output": "/assets/webComponents/"
           }
         ],
-        "styles": ["apps/lazy-web-components/src/styles.scss"],
+        "styles": ["apps/dynamic-load-web-components/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -61,10 +61,10 @@
       "dependsOn": ["^package"],
       "configurations": {
         "production": {
-          "browserTarget": "lazy-web-components:build:production"
+          "browserTarget": "dynamic-load-web-components:build:production"
         },
         "development": {
-          "browserTarget": "lazy-web-components:build:development"
+          "browserTarget": "dynamic-load-web-components:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "lazy-web-components:build"
+        "browserTarget": "dynamic-load-web-components:build"
       }
     },
     "lint": {
@@ -80,8 +80,8 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "apps/lazy-web-components/**/*.ts",
-          "apps/lazy-web-components/**/*.html"
+          "apps/dynamic-load-web-components/**/*.ts",
+          "apps/dynamic-load-web-components/**/*.html"
         ]
       }
     },
@@ -89,7 +89,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/lazy-web-components/jest.config.ts",
+        "jestConfig": "apps/dynamic-load-web-components/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {

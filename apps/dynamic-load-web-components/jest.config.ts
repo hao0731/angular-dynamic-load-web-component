@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'lazy-web-components',
+  displayName: 'dynamic-load-web-components',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/apps/lazy-web-components',
+  coverageDirectory: '../../coverage/apps/dynamic-load-web-components',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

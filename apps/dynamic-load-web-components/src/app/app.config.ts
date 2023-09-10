@@ -21,7 +21,10 @@ export const appConfig: ApplicationConfig = {
     },
     {
       provide: APP_INITIALIZER,
-      useFactory: (configStore: ConfigStore, loader: WebComponentDynamicLoaderService) => {
+      useFactory: (
+        configStore: ConfigStore,
+        loader: WebComponentDynamicLoaderService
+      ) => {
         return () => {
           return configStore.config$.pipe(
             take(1),
@@ -32,9 +35,9 @@ export const appConfig: ApplicationConfig = {
         };
       },
       deps: [ConfigStore, WebComponentDynamicLoaderService],
-      multi: true
+      multi: true,
     },
     provideHttpClient(),
-    provideRouter(appRoutes, withEnabledBlockingInitialNavigation())
+    provideRouter(appRoutes, withEnabledBlockingInitialNavigation()),
   ],
 };

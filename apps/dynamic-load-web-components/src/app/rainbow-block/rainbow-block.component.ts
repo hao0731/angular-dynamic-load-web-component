@@ -17,7 +17,11 @@ import { fromEvent } from 'rxjs';
 @Component({
   selector: 'hao-lab-rainbow-block',
   standalone: true,
-  template: `<rainbow-block #rainbowBlock [color]="color" [text]="text"></rainbow-block>`,
+  template: `<rainbow-block
+    #rainbowBlock
+    [color]="color"
+    [text]="text"
+  ></rainbow-block>`,
   imports: [CommonModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

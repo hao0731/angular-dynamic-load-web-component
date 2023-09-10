@@ -1,12 +1,13 @@
-import { inject, Injectable } from "@angular/core";
-import { HttpClient } from '@angular/common/http'
-import { BehaviorSubject, filter, tap } from "rxjs";
+import { inject, Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, filter, tap } from 'rxjs';
 
 export interface Config {
-  webComponents: { id: string; source: string; }[];
+  webComponents: { id: string; source: string }[];
 }
 
-const isNotNull = <T>(config: T | null): config is NonNullable<T> => config !== null;
+const isNotNull = <T>(config: T | null): config is NonNullable<T> =>
+  config !== null;
 
 @Injectable({ providedIn: 'root' })
 export class ConfigStore {
