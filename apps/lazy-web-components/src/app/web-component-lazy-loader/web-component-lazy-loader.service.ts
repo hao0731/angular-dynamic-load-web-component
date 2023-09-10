@@ -1,6 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { inject, Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { fromEvent, map, of, take } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class WebComponentLazyLoaderService {
@@ -18,15 +18,9 @@ export class WebComponentLazyLoaderService {
 
     this._document.head.appendChild(script);
 
-    return new Observable<null>((subscriber) => {
-      script.onload = () => {
-        subscriber.next(null);
-        subscriber.complete();
-      };
-
-      script.onerror = (error) => {
-        subscriber.error(error);
-      };
-    });
+    return fromEvent<null>(script, 'load').pipe(
+      map(() => null),
+      take(1)
+    );
   }
 }
