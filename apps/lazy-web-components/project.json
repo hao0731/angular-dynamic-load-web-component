@@ -4,10 +4,12 @@
   "projectType": "application",
   "prefix": "hao-lab",
   "sourceRoot": "apps/lazy-web-components/src",
+  "implicitDependencies": ["web-components-rainbow-block"],
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
+      "dependsOn": ["^package"],
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/lazy-web-components",
@@ -56,6 +58,7 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "dependsOn": ["^package"],
       "configurations": {
         "production": {
           "browserTarget": "lazy-web-components:build:production"
