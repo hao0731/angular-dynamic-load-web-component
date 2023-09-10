@@ -7,4 +7,4 @@
 
 ## Start the app
 
-To start the development server run `nx serve lazy-web-components`. Open your browser and navigate to http://localhost:4200/. Happy coding!
+To start the development server run `nx serve dynamic-load-web-components`. Open your browser and navigate to http://localhost:4200/. Happy coding!
