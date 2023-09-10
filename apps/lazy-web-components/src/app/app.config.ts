@@ -19,21 +19,21 @@ export const appConfig: ApplicationConfig = {
       deps: [ConfigStore],
       multi: true,
     },
-    // {
-    //   provide: APP_INITIALIZER,
-    //   useFactory: (configStore: ConfigStore, loader: WebComponentLazyLoaderService) => {
-    //     return () => {
-    //       return configStore.config$.pipe(
-    //         take(1),
-    //         concatMap((config) => from(config.webComponents)),
-    //         mergeMap(({ id, source }) => loader.load(id, source)),
-    //         toArray()
-    //       );
-    //     };
-    //   },
-    //   deps: [ConfigStore, WebComponentLazyLoaderService],
-    //   multi: true
-    // },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (configStore: ConfigStore, loader: WebComponentLazyLoaderService) => {
+        return () => {
+          return configStore.config$.pipe(
+            take(1),
+            concatMap((config) => from(config.webComponents)),
+            mergeMap(({ id, source }) => loader.load(id, source)),
+            toArray()
+          );
+        };
+      },
+      deps: [ConfigStore, WebComponentLazyLoaderService],
+      multi: true
+    },
     provideHttpClient(),
     provideRouter(appRoutes, withEnabledBlockingInitialNavigation())
   ],
