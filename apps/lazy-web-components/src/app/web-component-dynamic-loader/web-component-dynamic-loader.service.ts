@@ -3,7 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { fromEvent, map, of, take } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export class WebComponentLazyLoaderService {
+export class WebComponentDynamicLoaderService {
   private readonly _document = inject(DOCUMENT);
 
   load(id: string, source: string) {

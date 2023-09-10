@@ -7,7 +7,7 @@ import {
 import { concatMap, from, mergeMap, take, toArray } from 'rxjs';
 import { appRoutes } from './app.routes';
 import { ConfigStore } from './config';
-import { WebComponentLazyLoaderService } from './web-component-lazy-loader';
+import { WebComponentDynamicLoaderService } from './web-component-dynamic-loader';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -21,7 +21,7 @@ export const appConfig: ApplicationConfig = {
     },
     {
       provide: APP_INITIALIZER,
-      useFactory: (configStore: ConfigStore, loader: WebComponentLazyLoaderService) => {
+      useFactory: (configStore: ConfigStore, loader: WebComponentDynamicLoaderService) => {
         return () => {
           return configStore.config$.pipe(
             take(1),
@@ -31,7 +31,7 @@ export const appConfig: ApplicationConfig = {
           );
         };
       },
-      deps: [ConfigStore, WebComponentLazyLoaderService],
+      deps: [ConfigStore, WebComponentDynamicLoaderService],
       multi: true
     },
     provideHttpClient(),
